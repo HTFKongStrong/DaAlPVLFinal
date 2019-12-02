@@ -112,9 +112,9 @@ public class Schedule {
 
 	public int earliestPossibleStarttime(Job j, Job[] jobs) {
 		// berechneFruehesteStartzeit
-		// Der Zeitpunkt, nachdem alle Vorg√§nger abgearbeitet sind.
+		// Der Zeitpunkt, nachdem alle Vorg‰nger abgearbeitet sind.
 		ArrayList<Integer> vorgaenger = j.vorgaenger;
-		// Startzeit des sp√§testen Vorg√§ngers + dauer!
+		// Startzeit des sp‰testen Vorg‰ngers + dauer!
 		int fruehestenStart = 0;
 		for (int i = 0; i < vorgaenger.size(); i++) {
 			Job vorg = Job.getJob(jobs, vorgaenger.get(i));
@@ -139,7 +139,7 @@ public class Schedule {
 	}
 
 	public int starttime(Job j, int p1, int[][] resTab) {
-		// Pr√ºfen, ob ab diesem Zeitpunkt gen√ºgend resourcen f√ºr die Dauer des Jobs
+		// Pr¸fen, ob ab diesem Zeitpunkt gen¸gend resourcen f¸r die Dauer des Jobs
 		// vorhanden sind
 		int[] verwendeteResourcen = j.verwendeteResourcen;
 		boolean genug = true;
@@ -160,6 +160,7 @@ public class Schedule {
 		} while (!genug);
 		return p1;
 	}
+
 //	Diese Methode kann in die Klasse Schedule integriert werden, um einen Schedule auszugeben
 
 	public void ausgabe(String directory, String ausgabeName) {

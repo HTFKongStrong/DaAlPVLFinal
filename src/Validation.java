@@ -2,7 +2,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class Test {
+public class Validation {
 	public static void main(String[] args) throws FileNotFoundException {
 		String solPath = "solutions";
 		String insPath = "instances";
@@ -14,10 +14,12 @@ public class Test {
 			// System.out.println(solFile.getName());
 			boolean fileVorhanden = false;
 			for (File insFile : insWalker) {
-				long start = System.currentTimeMillis();
 
+				// Eigener Code
+				long start = System.currentTimeMillis();
 				Schedule s = new Schedule();
 				int[] jobListe;
+				// Ende eigener Code
 
 				String insFileName = insFile.getName().replace(".sm", "");
 				if (solFileName.equals(insFileName)) {
@@ -30,16 +32,19 @@ public class Test {
 					}
 					validierung(solFile, jobs, res);
 					fileVorhanden = true;
+
+					// Eigner Code
 					s.initializeJobList(jobs);
 					s.decodeJobList(jobs, res);
 					jobListe = s.jobListe;
 					long finish = System.currentTimeMillis();
 					long timeElapsed = finish - start;
-					System.out.println("Optimale Zeit: " + s.schedule[jobListe.length - 1] 
-							+ "; Rechenzeit: " + timeElapsed+" ms");
+					System.out.println("Optimale Zeit: " + s.schedule[jobListe.length - 1] + "; Rechenzeit: "
+							+ timeElapsed + " ms");
+					// Ende eigener Code
+
 					break;
 				}
-
 			}
 			if (!fileVorhanden) {
 				System.out.println("Es existiert keine Instanz zur Loesung");
