@@ -1,3 +1,4 @@
+package RCPSP;
 //Klasse in Schedule umbennenen
 // nimm nicht den kleinsten/kürzesten sondern irgend einen mit math.random
 // Crossover 

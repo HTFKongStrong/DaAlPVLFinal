@@ -1,3 +1,4 @@
+package RCPSP;
 /*
  * Einlese-Programm wurde von Studierende der HFT Stuttgart entwickelt 
  */
