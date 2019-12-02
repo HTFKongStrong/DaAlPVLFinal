@@ -76,6 +76,12 @@ public class Schedule {
 			}
 		}
 	}
+	
+	
+	public void gaSchedule(Job[] jobs) {
+		//genetischer Algotithums hier programmiren
+		
+	}
 
 	public void decodeJobList(Job[] jobs, Resource[] res) {
 		// calculate the starting times of the jobs in the order of jobListe
