@@ -6,6 +6,7 @@
 //erste hälfte 123- > zweite hälfte 135246 von links nach rechts durchgehn und alle die fehlen einfügen
 //123546
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -165,7 +166,9 @@ public class Schedule {
 
 	public void ausgabe(String directory, String ausgabeName) {
 		try {
-			PrintWriter pu = new PrintWriter(new FileWriter(ausgabeName + ".sol"));
+			//String path = "C:\\Users\\Doom\\eclipse-workspace\\DaAlPVLFinal\\solutions\\";
+			String file = ausgabeName.replace("instances\\", "").replace(".sm", "");
+			PrintWriter pu = new PrintWriter(new FileWriter(directory +file+ ".sol"));
 			for (int i = 0; i < jobListe.length; i++) {
 				pu.println(jobListe[i] + " " + schedule[i]);
 			}

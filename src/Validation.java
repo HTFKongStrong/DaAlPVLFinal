@@ -11,7 +11,7 @@ public class Validation {
 		for (File solFile : solWalker) {
 			String solFileName = solFile.getName().replace(".sol", "");
 			DirectoryWalker insWalker = new DirectoryWalker(new File(insPath), false);
-			// System.out.println(solFile.getName());
+			System.out.println(solFile.getName());
 			boolean fileVorhanden = false;
 			for (File insFile : insWalker) {
 
@@ -27,9 +27,10 @@ public class Validation {
 
 					Job[] jobs = Job.read(insFile);
 					Resource[] res = Resource.read(insFile);
-					for (int i = 0; i < jobs.length; i++) {
-						jobs[i].calculatePredecessors(jobs);
-					}
+//					for (int i = 0; i < jobs.length; i++) {
+//						jobs[i].calculatePredecessors(jobs);
+//					}
+					Job.calculatePredecessors(jobs);
 					validierung(solFile, jobs, res);
 					fileVorhanden = true;
 

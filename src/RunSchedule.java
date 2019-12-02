@@ -55,7 +55,7 @@ public class RunSchedule {
 			s.initializeJobList(jobs);
 			s.decodeJobList(jobs, res);
 			//Test für Ausgabe
-			s.ausgabe("solutions", fileList[i]);
+			s.ausgabe("C:\\Users\\Doom\\eclipse-workspace\\DaAlPVLFinal\\solutions\\",fileList[i]);
 			
 			int[] jobListe = s.jobListe;
 //			for (int j = 0; j < jobListe.length; i++) {
@@ -66,7 +66,7 @@ public class RunSchedule {
 			System.out.println("Filename: " + fileList[i]+" , "+ "Optimale Zeit:" + s.schedule[jobListe.length - 1] + ", Rechenzeit: " + timeElapsed +" ms");
 			count++;
 		}
-		System.out.println(count);
+		System.out.println("Gelöste Dateien: "+count);
 //		//ENDE ALLE FILES BERECHNEN
 
 	}
